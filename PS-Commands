@@ -1,0 +1,6 @@
+#Get share mailbox settings to check if the save sent items is activated.
+Get-Mailbox shared_mailbox@contoso.com | select MessageCopyForSentAsEnabled
+Get-Mailbox shared_mailbox@contoso.com | select MessageCopyForSentAsEnabled
+
+#Configure the save Sent Items for shared mailbox as ture
+
