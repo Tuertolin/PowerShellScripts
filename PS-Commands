@@ -4,3 +4,15 @@ Get-Mailbox shared_mailbox@contoso.com | select MessageCopyForSentAsEnabled
 
 #Configure the save Sent Items for shared mailbox as ture
 
+#Provide access to Gaston calendar to Sam 
+Add-mailboxfolderpermission -identity gaston@sarli.co:\Calendar -User sam@sarli.co -AccessRights Editor
+
+Get-mailboxfolderpermission -identity gaston@sarli.co:\Calendar
+
+FolderName           User                 AccessRights
+----------           ----                 ------------
+Calendar             Default              {AvailabilityOnly}
+Calendar             Anonymous            {None}
+Calendar             Sam                  {Editor}
+
+Remove-MailboxFolderPermission -Identity gaston@sarli.co:\Calendar -User sam@sarli.co
